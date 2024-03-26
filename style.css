@@ -1,0 +1,240 @@
+
+:root{
+    --Tomato: rgb(255, 98, 87);
+
+    --Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%)
+}
+html{
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    color: var(--Dark-Slate-Grey)
+}
+body{
+    background-color: var(--Charcoal-Grey);
+}
+
+.main-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main{
+    background-color: var(--White);
+    max-width: 800px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    padding-left: 40px;
+    display: flex;
+}
+.mobile-main-img{
+    display: none;
+}
+.main-info{
+    padding-right: 40px;
+}
+h2{
+    font-size: 56px    ;
+    font-weight: 700    ;
+    margin-bottom: 30px;
+}
+ul{
+    margin: 40px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.updates{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    height: 20px;
+}
+.success-icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+}
+.email-address{
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.email-container{
+    display: flex;
+    width: 100%;
+}
+#error-email{
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-left: auto;
+    color: var(--Tomato);
+    display: none;
+}
+
+input{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 40px;
+    background-color: var(--White);
+    border: 1px solid var(--Grey);
+    width: calc(100% - 22px);
+    height: 50px;
+    border-radius: 5px;
+    padding-left: 20px; 
+    cursor: pointer;
+    color: var(--Dark-Slate-Grey)
+}
+input::placeholder{
+    color: var(--Grey);
+}
+input:focus{
+    outline: none; 
+    border: 1px solid var(--Dark-Slate-Grey);
+}
+
+.button{
+
+    background-color: var(--Dark-Slate-Grey);
+    color: var(--White);
+    border: none;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    height: 52px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#subscribe:hover {
+    
+    background: linear-gradient(90deg, #EC607D, var(--Tomato));
+    box-shadow: -5px 5px 5px rgba(255, 98, 87, 0.3), 0 20px 20px rgba(255, 98, 87, 0.3);
+    
+}
+.error-input{
+    border: 1px solid var(--Tomato);
+    color: var(--Tomato);
+    background-color: #fee2e0;
+}
+.error-input::placeholder{
+    color: var(--Tomato);
+}
+.error-input:focus{
+    border: 1px solid var(--Tomato);
+}
+.success-message{
+    display: none;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--Charcoal-Grey);
+    justify-content: center;
+    align-items: center;
+    
+}
+.main-success{
+    display: block;
+    background-color: var(--White);
+    border-radius: 20px;;
+    width: 100%;
+    max-width: 350px;
+    padding: 55px;
+    aspect-ratio: 1;
+    position: relative;
+}
+.success-message-icon{
+    width: 48px;
+}
+.main-success h2{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.main-success p{
+    margin-bottom: 40px;
+}
+@media only screen and (max-width: 850px){
+    .updates{
+        margin-bottom: 30px;
+    }
+}
+@media only screen and (max-width: 660px) {
+    body{
+        margin: 0;
+    }
+    .main{
+        flex-direction: column;
+        padding: 0;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .main-info{
+        order: 2;
+        padding: 20px;
+        padding-bottom: 0;
+        height: 100%;
+        background-color: var(--White);
+    }
+    h2{
+        font-size: 42px;
+    }
+    .main-img{
+        display: none;
+    }
+    .mobile-main-img{
+        display: block;
+        border-radius: 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        order: 1;
+    }
+    .updates{
+        align-items: normal;
+        margin-bottom: 30px;
+    }
+    .success-icon{
+        order: 1;
+    }
+    input{
+        margin-bottom: 20px;
+    }
+    span{
+        order: 2;
+    }
+    .success-message {
+        display: none;
+        padding: 30px;
+        box-sizing: border-box;
+        background-color: var(--White); 
+        
+      }
+    .main-success{
+        padding: 0;
+        padding-top: 120px;
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 120px);
+    }
+    .success-message-icon{
+        width: 64px;
+    }
+    .success-text p{
+        margin-bottom: 0;
+    }    
+    #dismiss{
+        margin-top: auto;
+
+    }
+
+}
